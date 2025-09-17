@@ -23,6 +23,13 @@ public class WebController {
         return "index";
     }
 
+    @GetMapping("/dashboard")
+    public String dashboard(Model model) {
+        model.addAttribute("cars", carService.findAll());
+        model.addAttribute("totalCars", carService.findAll().size());
+        return "dashboard";
+    }
+
     @PostMapping("/cars")
     public String saveCar(@Valid @ModelAttribute Car car,
                           BindingResult bindingResult,

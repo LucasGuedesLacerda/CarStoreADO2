@@ -8,7 +8,11 @@
 </head>
 <body>
 <div class="container mt-4">
-  <h1 class="text-center mb-4">CarStore - Gerenciamento de Carros</h1>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>CarStore - Gerenciamento de Carros</h1>
+    <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+  </div>
+
 
   <div th:if="${successMessage}" class="alert alert-success alert-dismissible fade show" role="alert">
     <span th:text="${successMessage}"></span>
@@ -20,6 +24,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   </div>
 
+  <!-- Formulário  -->
   <div class="card mb-4">
     <div class="card-header">
       <h5 th:text="${car != null && car.id != null ? 'Editar Carro' : 'Adicionar Novo Carro'}">Adicionar Novo Carro</h5>
@@ -142,7 +147,7 @@
     </div>
   </div>
 
-  <!-- Puxa a listagem json -->
+  <!-- Listagem Json -->
   <div class="mt-4 text-center">
     <p class="text-muted">
       API REST disponível em:
